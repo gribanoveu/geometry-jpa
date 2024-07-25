@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: geo-spring-boot
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5454/GEO_DB}
+    username: ${POSTGRES_USER:PGCL_HABR}
+    password: ${POSTGRES_PASSWORD:PGCL_VERYSECURE}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  flyway:
+    user: ${POSTGRES_USER:PGCL_HABR}
+    password: ${POSTGRES_PASSWORD:PGCL_VERYSECURE}
+    default-schema: public
+    enabled: true
